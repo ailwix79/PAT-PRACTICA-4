@@ -8,14 +8,18 @@ async function getData() {
 
     var res = await fetch(url)
         .then(response => response.json())
-        .then(data => showData(data))
+        .then(data => {
+            showData(data)
+            console.log(data)})
+
         .catch(e => {
             console.log(e);
         })
 }
 
-async function showData({ date, explanation, media_type, title, url }) {
-
+async function showData({date, explanation, media_type, title, url}) {
+    
+    document.getElementById('loader').style.display = 'none';
     const titulo = document.querySelector('#titulo');
     titulo.innerHTML = title;
     const fecha = document.querySelector('#fecha');
