@@ -1,10 +1,20 @@
 
 window.addEventListener('load', getData);
 
+function getDate(offset) {
+    let currentDate = new Date();
+    let D = currentDate.getDate();
+    let M = currentDate.getMonth() + 1;
+    let Y = currentDate.getFullYear();
+    var date = Y.toString() + '-' + M.toString() + '-' + (D+offset).toString();
+    return date;
+}
+
 async function getData() {
+
     const Nasa_API = 'mxBbZ4QkKet4IjgxUTOcJ38uGcoDGBwaKzS7OYcM';
-    const start_date = '2019-02-13'
-    const end_date = '2019-02-17'
+    const start_date = getDate(0);
+    const end_date = getDate(7);
     const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${start_date}&end_date=${end_date}&api_key=${Nasa_API}`;
 
     var res = await fetch(url)
@@ -28,7 +38,7 @@ async function parseInterestingData({near_earth_objects}) {
     var diameter_array = [];
     var miss_distance_array = [];
     var relative_velocity_array = [];
-    var scale_factor = 200;
+    var scale_factor = 50;
 
     for(i=0;i<dates.length;i++) {
       for(j=0;j<near_earth_objects[dates[i]].length;j++) {
