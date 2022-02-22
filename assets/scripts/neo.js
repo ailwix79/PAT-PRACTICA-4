@@ -6,7 +6,12 @@ function getDate(offset) {
     let D = currentDate.getDate();
     let M = currentDate.getMonth() + 1;
     let Y = currentDate.getFullYear();
-    var date = Y.toString() + '-' + M.toString() + '-' + (D+offset).toString();
+    var date = Y + '-' + M + '-' + (D+offset);
+
+    if (date == "2022-2-29") {
+      date = "2022-3-1";
+    }
+
     return date;
 }
 

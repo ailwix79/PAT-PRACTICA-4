@@ -11,4 +11,4 @@ Página de inicio, desde aquí se pueden seleccionar el API deseado
 Este API obtiene la fotografía del día, junto con una descripción
 
 # NEO NASA API
-Objetos más cercanos a la Tierra. Se han formateado los datos para presentarlos en un scatter plot. Este API se puede considerar como apartado EXTRA en la práctica
+Objetos más cercanos a la Tierra. Se han formateado los datos para presentarlos en un scatter plot.
