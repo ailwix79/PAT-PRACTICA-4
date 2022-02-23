@@ -25,7 +25,11 @@ async function getData() {
     var res = await fetch(url)
         .then(response => response.json())
         .then(data => {
-            console.log(data)
+            console.log(data);
+            if (data['code'] != null) {
+                var div = document.getElementById("error");
+                div.innerHTML = data['error_message'];
+            }
             parseInterestingData(data)})
 
         .catch(e => {
