@@ -8,7 +8,7 @@ function getDate(offset) {
     let Y = currentDate.getFullYear();
     var date = Y + '-' + M + '-' + (D+offset);
 
-    if (date == "2022-2-29") {
+    if (date == "2022-2-29" || date == "2022-2-30" || date == "2022-2-31") {
       date = "2022-3-1";
     }
 
@@ -19,13 +19,12 @@ async function getData() {
 
     const Nasa_API = 'mxBbZ4QkKet4IjgxUTOcJ38uGcoDGBwaKzS7OYcM';
     const start_date = getDate(0);
-    const end_date = getDate(7);
+    const end_date = getDate(11);
     const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${start_date}&end_date=${end_date}&api_key=${Nasa_API}`;
 
     var res = await fetch(url)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             if (data['code'] != null) {
                 var div = document.getElementById("error");
                 div.innerHTML = data['error_message'];
