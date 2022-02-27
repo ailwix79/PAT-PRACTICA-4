@@ -12,7 +12,7 @@ async function getData() {
             showData(data)})
 
         .catch(e => {
-            window.location.href = "./error.html";;
+            window.location.href = "./error.html";
         })
 }
 
