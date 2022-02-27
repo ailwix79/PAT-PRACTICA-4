@@ -9,11 +9,10 @@ async function getData() {
     var res = await fetch(url)
         .then(response => response.json())
         .then(data => {
-            showData(data)
-            console.log(data)})
+            showData(data)})
 
         .catch(e => {
-            console.log(e);
+            window.location.href = "./error.html";;
         })
 }
 

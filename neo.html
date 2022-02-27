@@ -10,13 +10,39 @@
         <title>API NEO NASA</title>
     </head>
     <body>
+
         <div class="loader" id="loader"></div>
         <br>
         <br>
+        <div class="container" id="date_finder">
+            <form>
+                <div class="sm-12 row offset-sm-3">
+                    <div class="col-sm-4">
+                        <label for="inputName" class="col-sm-4 col-form-label">Start Date</label>
+                        <input type="text" class="form-control" id="start_date" placeholder="YYYY-MM-DD Format">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="inputName" class="col-sm-4 col-form-label">End Date</label>
+                        <input type="text" class="form-control" id="end_date" placeholder="YYYY-MM-DD Format">
+                    </div>
+                </div>
+                <br>
+                <div class="sm-12 row offset-sm-5">
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-primary" onclick="newData()">Set New Dates</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br>
+        <br>
         <div class='container'>
-            <div class='alert-danger' id='error'></div>
+            <div class='alert-danger alert-dismissible' id='error'></div>
         </div>
         <div id='myDiv'></div>
+        <br>
+        <br>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="assets/scripts/neo.js"></script>
     </body>
